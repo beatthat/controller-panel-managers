@@ -23,8 +23,8 @@
         "postinstall": "node scripts/postinstall.js",
         "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install",
         "clean": "rm -f *.tgz && cd test && npm run clean",
-        "cp:test2src" : "cd test && node scripts/cp-test2src.js",
-        "overwrite:test2src" : "cd test && node scripts/overwrite-test2src.js",
+        "cp:test2src": "cd test && node scripts/cp-test2src.js",
+        "overwrite:test2src": "cd test && node scripts/overwrite-test2src.js",
         "pub:tag": "git add -A && git commit -m ${npm_package_version} && git tag -a ${npm_package_version} -m ${npm_package_version} && git push origin master && git push origin ${npm_package_version}"
     },
     "dependencies": {
