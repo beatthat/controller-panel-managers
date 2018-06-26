@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using BeatThat.Pools;
 using UnityEditor;
-using BeatThat;
+using UnityEngine;
 
-namespace BeatThat.UI
+namespace BeatThat.Controllers
 {
-	[CustomEditor(typeof(ControllerPanelManager), true)]
+    [CustomEditor(typeof(ControllerPanelManager), true)]
 	public class ControllerPanelManagerEditor : UnityEditor.Editor 
 	{
 //		private bool showProperties { get; set; }
@@ -59,3 +59,5 @@ namespace BeatThat.UI
 
 	}
 }
+
+

@@ -1,8 +1,10 @@
+using BeatThat.Pools;
+using BeatThat.Properties;
 using BeatThat;
 using System.Collections.Generic;
+using BeatThat.Panels;
 
-namespace BeatThat
-{
+namespace BeatThat.Controllers{
 	public static class ControllerPanelNotifications  
 	{
 		public static void Open(object panel, object model, IDictionary<string, object> options = null)
@@ -52,3 +54,5 @@ namespace BeatThat
 		}
 	}
 }
+
+

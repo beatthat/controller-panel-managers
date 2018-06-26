@@ -1,40 +1,48 @@
 {
-    "name": "controller-panel-managers",
-    "scope": "ape",
-    "version": "0.0.1",
-    "description": "Core interface for a Binding--generally a safe reference to a listener binding that can be queried 'isBound' and used to unbind the listener.",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/beatthat/controller-panel-managers.git"
-    },
-    "files": [
-        "index.js",
-        "scripts",
-        "src"
-    ],
-    "author": "larrykirschner@gmail.com",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/beatthat/controller-panel-managers/issues"
-    },
-    "homepage": "https://github.com/beatthat/controller-panel-managers",
-    "scripts": {
-        "postinstall": "node scripts/postinstall.js",
-        "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install",
-        "clean": "rm -f *.tgz && cd test && npm run clean",
-        "cp:test2src": "cd test && node scripts/cp-test2src.js",
-        "overwrite:test2src": "cd test && node scripts/overwrite-test2src.js",
-        "pub:tag": "git add -A && git commit -m ${npm_package_version} && git tag -a ${npm_package_version} -m ${npm_package_version} && git push origin master && git push origin ${npm_package_version}"
-    },
-    "dependencies": {
-        "path": "^0.12.7",
-        "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^0.0.9",
-        "controllers": "github:beatthat/controllers#semver:^0.0.4",
-        "panel-interfaces": "github:beatthat/panel-interfaces#semver:^0.0.5",
-        "panel-manager-interfaces": "github:beatthat/panel-manager-interfaces#semver:^0.0.3",
-        "properties": "github:beatthat/properties#semver:^0.0.12",
-        "state-controller-properties": "github:beatthat/state-controller-properties#semver:^0.0.4",
-        "transitions": "github:beatthat/transitions#semver:^0.0.4"
-    }
+  "name": "controller-panel-managers",
+  "scope": "beatthat",
+  "version": "0.0.1",
+  "description": "Core interface for a Binding--generally a safe reference to a listener binding that can be queried 'isBound' and used to unbind the listener.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatthat/controller-panel-managers.git"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "src",
+    "Runtime",
+    "Samples"
+  ],
+  "author": "larrykirschner@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beatthat/controller-panel-managers/issues"
+  },
+  "homepage": "https://github.com/beatthat/controller-panel-managers",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "install:test": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz && cd test && npm run clean && npm install",
+    "clean": "rm -f *.tgz package-lock.json && cd test && npm run clean",
+    "cp:test2src": "cd test && node scripts/cp-test2src.js",
+    "overwrite:test2src": "cd test && node scripts/overwrite-test2src.js",
+    "pub:tag": "git add -A && git commit -m ${npm_package_version} && git tag -a ${npm_package_version} -m ${npm_package_version} && git push origin master && git push origin ${npm_package_version}",
+    "preinstall:test": "rm -f *.tgz",
+    "template:update": "node scripts/template-update.js",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags && npm run clean"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0",
+    "controllers": "github:beatthat/controllers#semver:^1.0.0",
+    "find-resource-by-component-type": "github:beatthat/find-resource-by-component-type#semver:^1.0.0",
+    "panel-interfaces": "github:beatthat/panel-interfaces#semver:^1.0.0",
+    "panel-manager-interfaces": "github:beatthat/panel-manager-interfaces#semver:^1.0.0",
+    "property-bindings": "github:beatthat/property-bindings#semver:^1.0.0",
+    "state-controller-properties": "github:beatthat/state-controller-properties#semver:^1.0.0",
+    "transitions": "github:beatthat/transitions#semver:^1.0.0"
+  },
+  "devDependencies": {}
 }
