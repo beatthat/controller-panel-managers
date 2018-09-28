@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using BeatThat.FindResources;
+using BeatThat.TransformPathExt;
 
 namespace BeatThat.Controllers{
 	public class FindPanelByType : MonoBehaviour
@@ -93,7 +94,8 @@ namespace BeatThat.Controllers{
 
 #if UNITY_EDITOR || DEBUG_UNSTRIP
 				Debug.LogWarning("[" + Time.frameCount + "] prefab for path  '" + path
-                    + "' should have its GameObject disabled on the asset. It will be set here which will modify the asset. If you don't want this behaviour, unset the 'forcePrefabsToDisabled property");
+                                 + "' should have its GameObject disabled on the asset. It will be set here which will modify the asset. If you don't want this behaviour, unset the " 
+                                 + GetType() + ".forcePrefabsToDisabled property at " + this.Path());
 #endif
                 prefab.SetActive(false);
             }
