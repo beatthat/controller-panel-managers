@@ -1,6 +1,4 @@
 using BeatThat.Pools;
-using BeatThat.Properties;
-using BeatThat;
 using System.Collections.Generic;
 using BeatThat.Panels;
 
